@@ -1,0 +1,34 @@
+{
+    "name": "AutoCheck 1click",
+    "version": "0.0.2",
+    "manifest_version": 2,
+    "description": "Grab an AutoCheck Report with a VIN",
+    "homepage_url": "http://extensionizr.com",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://www.bidndrive.com/*",
+            "https://www.bidndrive.com/salvage-cars/*",
+            "https://www.iaai.com/*",
+            "http://www.iaai.com/*",
+            "http://www.copart.com/*",
+            "https://www.copart.com/*",
+            "http://www.bmwregistry.com/*",
+            "https://www.bmwregistry.com/*"
+        ],
+        "js": ["js/jquery-2.1.4.min.js", "js/jquery.popupWindow.js","src/content_script.js"],
+        "run_at": "document_end"
+    }],
+    "permissions": [
+        "<all_urls>",
+        "storage",
+        "tabs",
+        "windows"
+    ],
+    "web_accessible_resources": [
+    "src/core.js" ]
+}
